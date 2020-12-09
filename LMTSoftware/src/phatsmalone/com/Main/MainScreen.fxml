@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="phatsmalone.com.Main.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="73.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="0.0" prefWidth="444.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="75.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER" prefHeight="139.0" prefWidth="447.0" text="LMT Systems" textAlignment="CENTER" GridPane.columnIndex="1">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Button mnemonicParsing="false"  prefHeight="63.0" prefWidth="447.0" text="New Project" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="newButton" onAction="#NewProject">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button id="openButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="447.0" text="Open Project" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#OpenProject">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button id="exitButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="447.0" text="Exit foo" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#ExitProject">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>
