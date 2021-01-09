@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phatsmalone.com.Main.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="180.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="420.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="262.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="262.0" minHeight="10.0" prefHeight="193.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Label" GridPane.rowIndex="1" />
+      <Label text="Label" GridPane.rowIndex="2" />
+      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Login" GridPane.columnIndex="1" />
+      <Label text="LMT" />
+   </children>
+</GridPane>

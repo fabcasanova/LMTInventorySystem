@@ -13,8 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-    Scene scene;
-    Stage window;
+    protected Stage window;
 
 @FXML
 private void NewProject(ActionEvent event) throws IOException {
