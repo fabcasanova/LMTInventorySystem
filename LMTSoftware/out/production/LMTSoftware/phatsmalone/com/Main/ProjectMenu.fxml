@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="phatsmalone.com.Main.ProjectController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phatsmalone.com.Main.ProjectController">
    <children>
       <Label alignment="CENTER" text="Project">
          <font>
@@ -32,10 +31,17 @@
       </HBox>
       <HBox prefHeight="40.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button minWidth="55.0" mnemonicParsing="false" text="Add">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+            <Button minWidth="55.0" mnemonicParsing="false" text="Update">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+            <Button minWidth="55.0" mnemonicParsing="false" text="Delete" />
          </children>
       </HBox>
+      <Hyperlink text="Import CSV" />
    </children>
 </VBox>
