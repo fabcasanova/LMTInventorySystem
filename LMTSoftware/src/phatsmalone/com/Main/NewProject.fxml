@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="phatsmalone.com.Main.Controller">
    <children>
       <Label alignment="CENTER" prefHeight="81.0" prefWidth="600.0" text="New Project Information">
          <font>
@@ -22,8 +23,8 @@
           <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="202.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" text="Next" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Back" GridPane.rowIndex="2">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" text="Next" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#NextButton"/>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Back" GridPane.rowIndex="2" onAction="#BackButton">
                <GridPane.margin>
                   <Insets left="175.0" />
                </GridPane.margin></Button>

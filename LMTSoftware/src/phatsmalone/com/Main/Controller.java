@@ -37,4 +37,22 @@ private void OpenProject(ActionEvent event) throws IOException{
 private void ExitProject(ActionEvent event) throws IOException{
     Platform.exit();
 };
+
+@FXML
+private void NextButton(ActionEvent event) throws IOException{
+    Parent projectScene = FXMLLoader.load(getClass().getResource("ProjectMenu.fxml"));
+    Scene nProject = new Scene(projectScene);
+    window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    window.setScene(nProject);
+    window.show();
+};
+
+@FXML
+private  void BackButton(ActionEvent event) throws IOException{
+    Parent startScene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
+    Scene mainMenuScene = new Scene(startScene);
+    window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    window.setScene(mainMenuScene);
+    window.show();
+};
 }

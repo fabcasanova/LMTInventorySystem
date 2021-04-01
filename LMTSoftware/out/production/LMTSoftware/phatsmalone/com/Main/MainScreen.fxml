@@ -23,7 +23,7 @@ fx:controller="phatsmalone.com.Main.Controller">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Button mnemonicParsing="false"  prefHeight="63.0" prefWidth="447.0" text="New Project" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="newButton" onAction="#NewProject">
+      <Button mnemonicParsing="false"  prefHeight="63.0" prefWidth="447.0" text="New Project" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#NewProject">
          <font>
             <Font size="20.0" />
          </font>

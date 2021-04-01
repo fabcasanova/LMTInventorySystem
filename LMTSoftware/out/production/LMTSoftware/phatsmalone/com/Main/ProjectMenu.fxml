@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="phatsmalone.com.Main.ProjectController">
+   <children>
+      <Label alignment="CENTER" text="Project">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets left="250.0" />
+         </VBox.margin>
+      </Label>
+      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <HBox prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" text="Search" />
+            <TextField minWidth="250.0">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
