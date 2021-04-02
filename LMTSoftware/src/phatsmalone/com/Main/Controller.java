@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,9 +17,9 @@ import java.io.IOException;
 public class Controller {
     protected Stage window;
 @FXML
-    private TextArea pName;
+    private TextField pName;
 @FXML
-    private TextArea directory;
+    private TextField directory;
 
 @FXML
 private void NewProject(ActionEvent event) throws IOException {
@@ -43,14 +44,16 @@ private void ExitProject(ActionEvent event) throws IOException{
     Platform.exit();
 };
 
-    // Grab data from user, create user-defined project folder at specified directory
-    // Proceeds to project window.
+/*  Grab data from user, create user-defined project folder at specified directory
+ *  Proceeds to project window.
+ */
 @FXML
 private void NextButton(ActionEvent event) throws IOException{
     String projectName, directoryName;
     projectName = pName.getText();
     directoryName = directory.getText();
-    //start here
+    Directory directory = new Directory(projectName, directoryName);
+    Directory.createNewDirectory();
     Parent projectScene = FXMLLoader.load(getClass().getResource("ProjectMenu.fxml"));
     Scene nProject = new Scene(projectScene);
     window = (Stage) ((Node)event.getSource()).getScene().getWindow();
