@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import phatsmalone.com.Main.db.DBConnect;
 
 import java.io.IOException;
 
@@ -54,6 +55,8 @@ private void NextButton(ActionEvent event) throws IOException{
     directoryName = directory.getText();
     Directory directory = new Directory(projectName, directoryName);
     Directory.createNewDirectory();
+    DBConnect dbConnect = new DBConnect();
+    dbConnect.connect();
     Parent projectScene = FXMLLoader.load(getClass().getResource("ProjectMenu.fxml"));
     Scene nProject = new Scene(projectScene);
     window = (Stage) ((Node)event.getSource()).getScene().getWindow();
