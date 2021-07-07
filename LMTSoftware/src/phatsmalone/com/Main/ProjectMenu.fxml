@@ -18,11 +18,11 @@
             <Insets left="250.0" />
          </VBox.margin>
       </Label>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listview" prefHeight="200.0" prefWidth="200.0" />
       <HBox prefHeight="40.0" prefWidth="200.0">
          <children>
             <Button mnemonicParsing="false" text="Search" />
-            <TextField minWidth="250.0">
+            <TextField fx:id="searchBar" minWidth="250.0">
                <HBox.margin>
                   <Insets left="25.0" />
                </HBox.margin>

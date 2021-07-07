@@ -7,21 +7,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import phatsmalone.com.Main.db.DBConnect;
+import phatsmalone.com.Main.dbModel.DBConnect;
 
 import java.io.IOException;
 
 public class Controller {
     protected Stage window;
-@FXML
+    @FXML
     private TextField pName;
-@FXML
+    @FXML
     private TextField directory;
 
+/*
+ *
+ *
+ *
+ */
 @FXML
 private void NewProject(ActionEvent event) throws IOException {
     Parent menuScene = FXMLLoader.load(getClass().getResource("NewProject.fxml"));
@@ -31,8 +34,13 @@ private void NewProject(ActionEvent event) throws IOException {
     window.show();
 };
 
+/*
+ *
+ *
+ *
+ */
 @FXML
-private void OpenProject(ActionEvent event) throws IOException{
+private void OpenProject(ActionEvent event) throws IOException {
     Parent openScene = FXMLLoader.load(getClass().getResource("OpenProject.fxml"));
     Scene oProjectScene = new Scene(openScene);
     window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -40,16 +48,24 @@ private void OpenProject(ActionEvent event) throws IOException{
     window.show();
 };
 
+/*
+ *
+ *
+ *
+ */
 @FXML
 private void ExitProject(ActionEvent event) throws IOException{
     Platform.exit();
 };
 
-/*  Grab data from user, create user-defined project folder at specified directory
+//create controller for this scene
+/*  NextButton()
+ *
+ *  Grab data from user, create user-defined project folder at specified directory
  *  Proceeds to project window.
  */
 @FXML
-private void NextButton(ActionEvent event) throws IOException{
+private void NextButton(ActionEvent event) throws IOException {
     String projectName, directoryName;
     projectName = pName.getText();
     directoryName = directory.getText();
@@ -64,12 +80,19 @@ private void NextButton(ActionEvent event) throws IOException{
     window.show();
 };
 
+/*
+ *
+ *
+ *
+ */
 @FXML
-private  void BackButton(ActionEvent event) throws IOException{
+private  void BackButton(ActionEvent event) throws IOException {
     Parent startScene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
     Scene mainMenuScene = new Scene(startScene);
     window = (Stage) ((Node)event.getSource()).getScene().getWindow();
     window.setScene(mainMenuScene);
     window.show();
 };
+
+
 }

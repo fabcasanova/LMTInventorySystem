@@ -1,12 +1,19 @@
-package phatsmalone.com.Main.db;
+package phatsmalone.com.Main.dbModel;
 
+import java.io.IOException;
 import java.sql.*;
 
 
 public class DBConnect {
+    public Connection connect = null;
+
+    /*
+     *
+     *
+     *
+     */
     public Connection connect() {
-        Connection connect = null;
-        //AUNT JAMAIMA WASSSUP BABBYYYY
+
         try {
             Class.forName("org.sqlite.JDBC");
             String connectionURL = "jdbc:sqlite:lmt.sqlite";
@@ -28,5 +35,7 @@ public class DBConnect {
         }
         return null;
     }
+
+
 
 }

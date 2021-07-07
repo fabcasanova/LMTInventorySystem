@@ -22,7 +22,7 @@
       <HBox prefHeight="40.0" prefWidth="200.0">
          <children>
             <Button mnemonicParsing="false" text="Search" />
-            <TextField minWidth="250.0">
+            <TextField fx:id="searchBar" minWidth="250.0">
                <HBox.margin>
                   <Insets left="25.0" />
                </HBox.margin>
