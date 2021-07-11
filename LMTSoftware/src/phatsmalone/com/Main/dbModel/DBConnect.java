@@ -7,9 +7,9 @@ import java.sql.*;
 public class DBConnect {
     public Connection connect = null;
 
-    /*
+    /*  connect()
      *
-     *
+     *  makes initial connection to lmt database
      *
      */
     public Connection connect() {

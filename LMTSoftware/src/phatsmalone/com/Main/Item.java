@@ -6,54 +6,181 @@ import java.util.Date;
 
 /*  Item
  *
- *  This class is for retrieving and modifying item data
+ *  This class is for retrieving and modifying item data.
  *
  */
 public class Item {
     private StringProperty name;
-    private IntegerProperty issueNumber;
+    private StringProperty issueNumber;
     private SimpleObjectProperty<Date> date;
     private StringProperty description;
     private FloatProperty price;
     private IntegerProperty rarityScale;
 
+    /*  Item()
+     *
+     *  Constructor for class item.  Instantiates objects used from the UX.
+     *
+     */
     public Item(){
         this.name = new SimpleStringProperty();
-        this.issueNumber = new SimpleIntegerProperty();
+        this.issueNumber = new SimpleStringProperty();
         this.date = new SimpleObjectProperty<>();
         this.description = new SimpleStringProperty();
         this.price = new SimpleFloatProperty();
         this.rarityScale = new SimpleIntegerProperty();
     }
 
-    public void setName(String itemName) {
-        this.name.set(itemName);
-    }
-    public String getName() {
-        return name.get();
+    /*  setName()
+     *
+     *  Sets the item name
+     *
+     */
+    public void setName(String itemName) { this.name.set(itemName); }
+
+    /*  getName()
+     *
+     *  Retrieves the itemname
+     *
+     */
+    public String getName() { return name.get(); }
+
+    /*  nameProperty()
+     *
+     *  retrieves name object
+     *
+     */
+    public StringProperty nameProperty() { return name; }
+
+    /*  setIssueNumber()
+     *
+     *  Sets issueNumber
+     *
+     */
+    public void setIssueNumber(String issueNumber) {
+        this.issueNumber.set(issueNumber);
     }
 
+    /*  getIssueNumber()
+     *
+     *  Retrieves issueNumber
+     *
+     */
+    public String getIssueNumber() { return issueNumber.get(); }
 
-    public void setName(String itemName) {
-        this.name.set(itemName);
-    }
-    public String getName() {
-        return name.get();
-    }
-
-
-    public void setName(String itemName) {
-        this.name.set(itemName);
-    }
-    public String getName() {
-        return name.get();
+    /*  issueNumProperty()
+     *
+     *  Retrieves issueNumber object
+     *
+     */
+    public StringProperty issueNumProperty() {
+        return issueNumber;
     }
 
-
-    public void setName(String itemName) {
-        this.name.set(itemName);
+    /*  setDate()
+     *
+     *  Sets date object
+     *
+     */
+    public void setDate(Date date) {
+        this.date.set((Date) date);
     }
-    public String getName() {
-        return name.get();
+
+    /*  getDate()
+     *
+     *  Retrieves date object
+     *
+     */
+    public Object getDate() {
+        return date.get();
+    }
+
+    /*  dateProperty()
+     *
+     *  Retrieves date property.
+     *
+     */
+    public SimpleObjectProperty<Date> dateProperty() {
+        return date;
+    }
+    /*  setDescription()
+     *
+     *  sets description
+     *
+     */
+    public void setDescription(String description) {
+        this.name.set(description);
+    }
+
+    /*  getDescription()
+     *
+     *  retrieves description
+     *
+     */
+    public String getDescription() {
+        return description.get();
+    }
+
+    /*  descriptionProperty()
+     *
+     *  Retrieves description object.
+     *
+     */
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+
+    /*  setPrice()
+     *
+     *  set price
+     *
+     */
+    public void setPrice(float price) {
+        this.price.set(price);
+    }
+
+    /*  getPrice()
+     *
+     *  Retrieve price
+     *
+     */
+    public Float getPrice() {
+        return price.get();
+    }
+
+    /*  priceProperty()
+     *
+     *  Retrieves price object
+     *
+     */
+    public FloatProperty priceProperty() {
+        return price;
+    }
+
+    /*  setRarityScale()
+     *
+     *  set rarityscale
+     *
+     */
+    public void setRarityScale(int scale) {
+        this.rarityScale.set(scale);
+    }
+
+    /*  getRarityScale()
+     *
+     *  retrieve rarityscale
+     *
+     */
+    public int getRarityScale() {
+        return rarityScale.get();
+    }
+
+    /*`rarityScaleProperty()
+     *
+     * Retrieves rarity scale property;
+     *
+     */
+    public IntegerProperty rarityScaleProperty() {
+        return rarityScale;
     }
 }

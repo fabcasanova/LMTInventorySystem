@@ -1,4 +1,4 @@
-package phatsmalone.com.Main;
+package phatsmalone.com.Main.controllers;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import phatsmalone.com.Main.Directory;
 import phatsmalone.com.Main.dbModel.DBConnect;
 
 import java.io.IOException;
@@ -80,7 +81,7 @@ private void NextButton(ActionEvent event) throws IOException {
     window.show();
 };
 
-/*
+/*  BackButton()
  *
  *
  *
