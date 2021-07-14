@@ -72,8 +72,8 @@ private void NextButton(ActionEvent event) throws IOException {
     directoryName = directory.getText();
     Directory directory = new Directory(projectName, directoryName);
     Directory.createNewDirectory();
-    DBConnect dbConnect = new DBConnect();
-    dbConnect.connect();
+    //DBConnect dbConnect = new DBConnect();
+    //dbConnect.connect();
     Parent projectScene = FXMLLoader.load(getClass().getResource("ProjectMenu.fxml"));
     Scene nProject = new Scene(projectScene);
     window = (Stage) ((Node)event.getSource()).getScene().getWindow();

@@ -11,10 +11,10 @@ import phatsmalone.com.Main.dbModel.DAO;
 import phatsmalone.com.Main.dbModel.DBConnect;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class ProjectController {
     String words;
@@ -53,7 +53,7 @@ public class ProjectController {
     //in item class, write methods that return the property of the values as objects
     name.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
     issueNumber.setCellValueFactory(cellData ->cellData.getValue().issueNumProperty());
-    date.setCellValueFactory(cellData -> cellData.getValue().dateProperty()); //FIXME
+    date.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
     }
 
 

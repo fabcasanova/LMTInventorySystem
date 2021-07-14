@@ -24,7 +24,7 @@ public class DAO {
         if (set.next()) {
             item = new Item();
             item.setName(set.getString("Name"));
-            item.setIssueNumber(set.getInt("IssueNumber"));
+            item.setIssueNumber(set.getString("IssueNumber"));
             item.setDate(set.getDate("Date"));
             item.setDescription(set.getString("Description"));
             item.setPrice(set.getFloat("Price"));
@@ -48,7 +48,7 @@ public class DAO {
 
             item = new Item();
             item.setName(set.getString("Name"));
-            item.setIssueNumber(set.getInt("IssueNumber"));
+            item.setIssueNumber(set.getString("IssueNumber"));
             item.setDate(set.getDate("Date"));
             item.setDescription(set.getString("Description"));
             item.setPrice(set.getFloat("Price"));
@@ -65,7 +65,7 @@ public class DAO {
      *  This method executes the search function and returns the keywords row
      *
      */
-    public void searchKeyWord(String keyword, String table) throws SQLException {
+     /* public void searchKeyWord(String keyword, String table) throws SQLException {
         PreparedStatement statement;
         DBConnect con = new DBConnect();
         statement = con.connect.prepareStatement("SELECT * FROM " + table + " WHERE " + table + " MATCH = " + keyword);
@@ -78,7 +78,7 @@ public class DAO {
 
             item = new Item();
             item.setName(set.getString("Name"));
-            item.setIssueNumber(set.getInt("IssueNumber"));
+            item.setIssueNumber(set.getString("IssueNumber"));
             item.setDate(set.getDate("Date"));
             item.setDescription(set.getString("Description"));
             item.setPrice(set.getFloat("Price"));
@@ -87,4 +87,5 @@ public class DAO {
 
         System.out.println("search");
     }
+    */
 }
