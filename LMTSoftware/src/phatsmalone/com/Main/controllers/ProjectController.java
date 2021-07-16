@@ -73,7 +73,7 @@ public class ProjectController {
     String keyword = searchBar.getText();
     String table = "";
     DAO dao = new DAO();
-    dao.searchKeyWord(keyword, table);
+    //dao.searchKeyWord(keyword, table);
     //populate observable list with entries from user keyword if any
     }
 

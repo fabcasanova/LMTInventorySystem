@@ -44,7 +44,7 @@ public class DBConnect {
         CachedRowSetImpl crs = null;
         try{
             connect();
-            statement =
+            //statement =
         } catch (Exception e) {}
 
         return crs;
