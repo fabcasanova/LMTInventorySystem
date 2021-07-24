@@ -1,18 +1,15 @@
-package phatsmalone.com.Main.controllers;
+package phatsmalone.com.Main;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import phatsmalone.com.Main.Item;
 import phatsmalone.com.Main.dbModel.DAO;
-import phatsmalone.com.Main.dbModel.DBConnect;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -22,7 +19,7 @@ public class ProjectController {
     private TextField searchBar;
     //observable list for table entry
     @FXML
-    private TableView itemTable;
+    private TableView<Item> itemTable;
 
     @FXML
     private TableColumn<Item, String> name;
@@ -42,21 +39,30 @@ public class ProjectController {
     @FXML
     private TableColumn<Item, Integer> rarity;
 
-
+    //FIXME FINISH THIS
     /*  initialize()
      *
      *  Method is called when fxml file has loaded into memory. Uses lambdas to set values of cells.
      *
      */
     @FXML
-    private void initialize() {
+    private void initialize() throws SQLException, ClassNotFoundException {
     //in item class, write methods that return the property of the values as objects
     name.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-    issueNumber.setCellValueFactory(cellData ->cellData.getValue().issueNumProperty());
+    issueNumber.setCellValueFactory(cellData -> cellData.getValue().issueNumProperty());
     date.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+    description.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
+    price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+    rarity.setCellValueFactory((cellData -> cellData.getValue().rarityScaleProperty().asObject()));
+    //populateGrid(DAO.searchAllItems());
     }
-
-
+    /*
+     *
+     *
+     *
+     */
+    @FXML
+    private void loadInitItems(){}
 
     /*  searchButton()
     *
@@ -77,16 +83,53 @@ public class ProjectController {
     //populate observable list with entries from user keyword if any
     }
 
-
-
+    /*
+     *
+     *
+     *
+     */
+    @FXML
+    private void populateItemGrid(Item item) throws ClassNotFoundException{
+        ObservableList<Item>  list = FXCollections.observableArrayList();
+        list.add(item);
+        itemTable.setItems(list);
+    }
 
     /*
      *
      *
      *
      */
+    @FXML
+    private void populateGrid(ObservableList<Item> items) throws ClassNotFoundException{
+        itemTable.setItems(items);
+    }
+    /*
+     *
+     *
+     *
+     */
 
+    /*
+     *
+     *
+     *
+     */
+    @FXML
+    private void setItemToGrid(Item items) {
 
+    }
+    /*
+     *
+     *
+     *
+     */
+    @FXML
+    private void populateAndShowItems(Item items) throws ClassNotFoundException{
+        if (items != null) {
+            populateItemGrid(items);
+        }
+    }
 
     @FXML
     private void addButton(ActionEvent event) throws IOException {

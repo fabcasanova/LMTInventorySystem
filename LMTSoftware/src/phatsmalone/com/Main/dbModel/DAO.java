@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import phatsmalone.com.Main.Item;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -39,7 +38,7 @@ public class DAO {
      *  retrieves and populates data itemlist on project page
      *
      */
-    public ObservableList<Item> getItemList(ResultSet set) throws SQLException, ClassNotFoundException {
+    public static ObservableList<Item> getItemList(ResultSet set) throws SQLException, ClassNotFoundException {
 
         ObservableList<Item> itemList = FXCollections.observableArrayList();
         Item item = null;
@@ -48,17 +47,37 @@ public class DAO {
 
             item = new Item();
             item.setName(set.getString("Name"));
+
+            System.out.println(set.getString("Name"));
+
             item.setIssueNumber(set.getString("IssueNumber"));
             item.setDate(set.getDate("Date"));
             item.setDescription(set.getString("Description"));
             item.setPrice(set.getFloat("Price"));
             item.setRarityScale(set.getInt("RarityScale"));
             itemList.add(item);
+
         }
 
         return itemList;
     }
 
+    /*
+     *
+     *
+     *
+     */
+    public static ObservableList<Item> searchAllItems() throws SQLException, ClassNotFoundException {
+        String statement = "SELECT * FROM ItemInventory";
+
+        try{
+            ResultSet itemResult = DBConnect.executeDBQuery(statement);
+            return getItemList(itemResult);
+        } catch(SQLException e) {
+            System.out.println("Search Unsuccessful");
+            throw e;
+        }
+    }
     //fix search
     /*  searchKeyword
      *
