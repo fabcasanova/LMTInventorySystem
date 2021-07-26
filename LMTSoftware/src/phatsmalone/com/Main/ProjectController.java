@@ -10,8 +10,9 @@ import javafx.scene.control.TextField;
 import phatsmalone.com.Main.dbModel.DAO;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ProjectController {
     String words;
@@ -28,7 +29,7 @@ public class ProjectController {
     private TableColumn<Item, String> issueNumber;
 
     @FXML
-    private TableColumn<Item, Date> date;
+    private TableColumn<Item, String> date;
 
     @FXML
     private TableColumn<Item, String> description;
@@ -54,7 +55,7 @@ public class ProjectController {
     description.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
     price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
     rarity.setCellValueFactory((cellData -> cellData.getValue().rarityScaleProperty().asObject()));
-    //populateGrid(DAO.searchAllItems());
+    populateGrid(DAO.searchAllItems());
     }
     /*
      *

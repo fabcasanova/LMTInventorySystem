@@ -36,7 +36,7 @@
                   <Font size="18.0" />
                </font></Label>
             <TextField id="pName" fx:id="pName" prefWidth="336.0" GridPane.columnIndex="1" />
-            <TextField id="directory" fx:id="directory" prefHeight="37.0" prefWidth="340.0" text="C:\" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField id="directory" fx:id="directory" prefHeight="37.0" prefWidth="340.0" text="C:\output\" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

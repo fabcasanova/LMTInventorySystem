@@ -4,8 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import phatsmalone.com.Main.Item;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 
 public class DAO {
 
@@ -24,7 +24,7 @@ public class DAO {
             item = new Item();
             item.setName(set.getString("Name"));
             item.setIssueNumber(set.getString("IssueNumber"));
-            item.setDate(set.getDate("Date"));
+            item.setDate(set.getString("ReleaseDate"));
             item.setDescription(set.getString("Description"));
             item.setPrice(set.getFloat("Price"));
             item.setRarityScale(set.getInt("RarityScale"));
@@ -33,6 +33,7 @@ public class DAO {
         return item;
     }
 
+    //FIXME TRACKED IT HERE****
     /*  getItemList()
      *
      *  retrieves and populates data itemlist on project page
@@ -41,20 +42,31 @@ public class DAO {
     public static ObservableList<Item> getItemList(ResultSet set) throws SQLException, ClassNotFoundException {
 
         ObservableList<Item> itemList = FXCollections.observableArrayList();
-        Item item = null;
+
 
         while (set.next()) {
 
-            item = new Item();
+            Item item = new Item();
             item.setName(set.getString("Name"));
-
             System.out.println(set.getString("Name"));
 
             item.setIssueNumber(set.getString("IssueNumber"));
-            item.setDate(set.getDate("Date"));
+            System.out.println(set.getString("IssueNumber"));
+            //FIXME CONVERT SQL Date into a Java Object then set it.
+
+
+            item.setDate(set.getString("ReleaseDate"));
+            //System.out.println(set.getString("Date"));
+
             item.setDescription(set.getString("Description"));
+            System.out.println(set.getString("Description"));
+
             item.setPrice(set.getFloat("Price"));
+            System.out.println(set.getString("Price"));
+
             item.setRarityScale(set.getInt("RarityScale"));
+            System.out.println(set.getString("RarityScale"));
+
             itemList.add(item);
 
         }

@@ -2,6 +2,7 @@ package phatsmalone.com.Main;
 
 import javafx.beans.property.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /*  Item
@@ -12,7 +13,7 @@ import java.util.Date;
 public class Item {
     private StringProperty name;
     private StringProperty issueNumber;
-    private SimpleObjectProperty<Date> date;
+    private SimpleStringProperty date;
     private StringProperty description;
     private FloatProperty price;
     private IntegerProperty rarityScale;
@@ -25,7 +26,7 @@ public class Item {
     public Item(){
         this.name = new SimpleStringProperty();
         this.issueNumber = new SimpleStringProperty();
-        this.date = new SimpleObjectProperty<>();
+        this.date = new SimpleStringProperty();
         this.description = new SimpleStringProperty();
         this.price = new SimpleFloatProperty();
         this.rarityScale = new SimpleIntegerProperty();
@@ -82,8 +83,8 @@ public class Item {
      *  Sets date object
      *
      */
-    public void setDate(Date date) {
-        this.date.set((Date) date);
+    public void setDate(String date) {
+        this.date.set(date);
     }
 
     /*  getDate()
@@ -91,7 +92,9 @@ public class Item {
      *  Retrieves date object
      *
      */
-    public Object getDate() {
+    public String getDate() {
+
+
         return date.get();
     }
 
@@ -100,7 +103,7 @@ public class Item {
      *  Retrieves date property.
      *
      */
-    public SimpleObjectProperty<Date> dateProperty() {
+    public StringProperty dateProperty() {
         return date;
     }
     /*  setDescription()

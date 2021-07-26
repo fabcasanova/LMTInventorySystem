@@ -72,7 +72,7 @@ public class DBConnect {
         Statement statement = null;
         ResultSet set = null;
         CachedRowSet crs = null;
-        //FIXME DATA NOT RETRIEVING cachedrowset not working, data not showing
+        //FIXME DATA NOT RETRIEVING cachedrowset not working, data not showing GO TO GETITEMLIST
         try{
             connect();
 
@@ -88,8 +88,8 @@ public class DBConnect {
                 set.close();
             }
 
-            if (crs != null) {
-                crs.close();
+            if (statement != null) {
+                statement.close();
             }
             dbDisconnect();
         }
