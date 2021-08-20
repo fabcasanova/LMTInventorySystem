@@ -19,7 +19,7 @@ fx:controller="phatsmalone.com.Main.Controller">
       <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label alignment="CENTER" prefHeight="139.0" prefWidth="447.0" text="LMT Systems" textAlignment="CENTER" GridPane.columnIndex="1">
+      <Label alignment="CENTER" prefHeight="139.0" prefWidth="447.0" text="Inventory Management Tool" textAlignment="CENTER" GridPane.columnIndex="1">
          <font>
             <Font size="30.0" />
          </font></Label>
@@ -33,7 +33,7 @@ fx:controller="phatsmalone.com.Main.Controller">
             <Font size="20.0" />
          </font>
       </Button>
-      <Button id="exitButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="447.0" text="Exit foo" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#ExitProject">
+      <Button id="exitButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="447.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#ExitProject">
          <font>
             <Font size="20.0" />
          </font>

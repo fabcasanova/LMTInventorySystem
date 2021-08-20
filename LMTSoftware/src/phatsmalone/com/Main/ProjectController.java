@@ -10,9 +10,7 @@ import javafx.scene.control.TextField;
 import phatsmalone.com.Main.dbModel.DAO;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class ProjectController {
     String words;

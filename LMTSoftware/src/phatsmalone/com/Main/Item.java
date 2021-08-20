@@ -2,9 +2,6 @@ package phatsmalone.com.Main;
 
 import javafx.beans.property.*;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 /*  Item
  *
  *  This class is for retrieving and modifying item data.
@@ -112,7 +109,7 @@ public class Item {
      *
      */
     public void setDescription(String description) {
-        this.name.set(description);
+        this.description.set(description);
     }
 
     /*  getDescription()
