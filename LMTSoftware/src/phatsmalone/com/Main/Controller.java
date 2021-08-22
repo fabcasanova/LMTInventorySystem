@@ -9,13 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import phatsmalone.com.Main.Directory;
 import phatsmalone.com.Main.dbModel.DBConnect;
 
 import java.io.IOException;
 
 public class Controller {
-    protected Stage window;
+    public Stage window;
     @FXML
     private TextField pName;
     @FXML

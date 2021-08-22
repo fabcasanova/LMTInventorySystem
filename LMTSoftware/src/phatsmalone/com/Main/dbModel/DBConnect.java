@@ -1,10 +1,7 @@
 package phatsmalone.com.Main.dbModel;
 
-import com.sun.rowset.*;
-
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
-import java.io.IOException;
 import java.sql.*;
 
 
@@ -26,21 +23,7 @@ public class DBConnect {
             System.out.println("Connection:  " + connect.toString());
 
 
-            String sql = "SELECT Name FROM ItemInventory";
 
-            /*try (
-                 Statement stmt  = connect.createStatement();
-                 ResultSet rs    = stmt.executeQuery(sql)) {
-
-                // loop through the result set
-                while (rs.next()) {
-                    System.out.println(
-                            rs.getString("Name"));
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-            */
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Connection: N/A");
             e.printStackTrace();

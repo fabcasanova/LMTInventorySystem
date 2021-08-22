@@ -119,4 +119,8 @@ public class DAO {
         System.out.println("search");
     }
     */
+    //FIXME design the algo for this function
+    public static void addItem(Item item){
+        String statement = "";
+    }
 }

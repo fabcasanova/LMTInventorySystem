@@ -4,9 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import phatsmalone.com.Main.dbModel.DAO;
 
 import java.io.IOException;
@@ -75,9 +80,9 @@ public class ProjectController {
     //put the prepare statement in the DAO
     @FXML
     private void searchButton(ActionEvent event) throws IOException, SQLException {
-    String keyword = searchBar.getText();
-    String table = "";
-    DAO dao = new DAO();
+    //String keyword = searchBar.getText();
+    //String table = "";
+    //DAO dao = new DAO();
     //dao.searchKeyWord(keyword, table);
     //populate observable list with entries from user keyword if any
     }
@@ -132,6 +137,15 @@ public class ProjectController {
 
     @FXML
     private void addButton(ActionEvent event) throws IOException {
+        Parent frag = FXMLLoader.load(getClass().getResource("addFragment.fxml"));
+        Scene fragScene = new Scene(frag);
+
+
+        Stage addFragment = new Stage();
+        addFragment.setScene(fragScene);
+        addFragment.initModality(Modality.WINDOW_MODAL);
+        addFragment.initOwner(addFragment.getOwner());
+        addFragment.showAndWait();
 
     }
 
