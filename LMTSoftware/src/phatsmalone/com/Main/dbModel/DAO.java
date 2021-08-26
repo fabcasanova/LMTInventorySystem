@@ -33,10 +33,9 @@ public class DAO {
         return item;
     }
 
-    //FIXME TRACKED IT HERE****
     /*  getItemList()
      *
-     *  retrieves and populates data itemlist on project page
+     *  Retrieves and populates data itemlist on project page.
      *
      */
     public static ObservableList<Item> getItemList(ResultSet set) throws SQLException, ClassNotFoundException {
@@ -48,7 +47,7 @@ public class DAO {
 
             Item item = new Item();
             item.setName(set.getString("Name"));
-            System.out.println(set.getString("Name"));
+            //System.out.println(set.getString("Name"));
 
             item.setIssueNumber(set.getString("IssueNumber"));
             //System.out.println(set.getString("IssueNumber"));

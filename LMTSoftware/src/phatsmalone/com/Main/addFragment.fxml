@@ -100,7 +100,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Button>
-            <Button minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Cancel" fx:id="cancelButton" onAction="#CancelButtonEntered">
+            <Button minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Exit" fx:id="cancelButton" onAction="#exitButtonEntered">
                <HBox.margin>
                   <Insets left="25.0" />
                </HBox.margin>
