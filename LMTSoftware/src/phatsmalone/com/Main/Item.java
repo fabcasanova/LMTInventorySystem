@@ -8,12 +8,12 @@ import javafx.beans.property.*;
  *
  */
 public class Item {
-    private StringProperty name;
-    private StringProperty issueNumber;
-    private SimpleStringProperty date;
-    private StringProperty description;
-    private FloatProperty price;
-    private IntegerProperty rarityScale;
+    public StringProperty name;
+    public StringProperty issueNumber;
+    public SimpleStringProperty date;
+    public StringProperty description;
+    public FloatProperty price;
+    public IntegerProperty rarityScale;
 
     /*  Item()
      *

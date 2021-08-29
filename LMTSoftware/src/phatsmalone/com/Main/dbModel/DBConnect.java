@@ -45,21 +45,20 @@ public class DBConnect {
         }
     }
 
-    /*
+    /*  executeDBQuery()
      *
-     *
+     *  Creates resultsets for requested sql statements.
      *
      */
-    public static ResultSet executeDBQuery(String qryStatement) throws SQLException, ClassNotFoundException {
+    public static ResultSet executeDBQuery(String qryStatement) throws SQLException {
 
         Statement statement = null;
         ResultSet set = null;
         CachedRowSet crs = null;
-        //FIXME DATA NOT RETRIEVING cachedrowset not working, data not showing GO TO GETITEMLIST
         try{
             connect();
 
-            System.out.println( "Select Statement :    " + qryStatement + "\n");
+            //System.out.println( "Select Statement :    " + qryStatement + "\n");
             statement = connect.createStatement();
             set = statement.executeQuery(qryStatement);
             crs = RowSetProvider.newFactory().createCachedRowSet();
@@ -81,5 +80,24 @@ public class DBConnect {
         return crs;
     }
 
-
+    /*  executeDBUpdate()
+     *
+     *  Executes updates into the database.
+     *
+     */
+    public static void executeDBUpdate(String sqlString) throws SQLException{
+        PreparedStatement statement = null;
+        try {
+            connect();
+            statement = connect.prepareStatement(sqlString);
+            statement.executeQuery();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            dbDisconnect();
+        }
+    }
 }

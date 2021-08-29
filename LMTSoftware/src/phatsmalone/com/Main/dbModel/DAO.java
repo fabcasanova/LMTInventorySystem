@@ -118,8 +118,15 @@ public class DAO {
         System.out.println("search");
     }
     */
-    //FIXME design the algo for this function
+    //FIXME use quotes for string values in sql, I believe this way is prone to sql injections
     public static void addItem(Item item){
-        String statement = "";
+        String statement =  "INSERT INTO ItemInventory(Name, IssueNumber, ReleaseDate, Description, Price, RarityScale)" +
+                            " VALUES(" + item.getName() + ", " + item.getIssueNumber() + ", " + item.getDate() + ", " +
+                            item.getIssueNumber() + ", " + item.getPrice() + ", " + item.getRarityScale() + ");";
+        try {
+            DBConnect.executeDBUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import phatsmalone.com.Main.dbModel.DAO;
 
 public class AddItemFragmentController {
     @FXML
@@ -43,27 +44,25 @@ public class AddItemFragmentController {
         Item item = new Item();
 
         name = nameField.getText();
-        System.out.println(name);
         item.setName(name);
         issue = issueField.getText();
-        System.out.println(issue);
         item.setIssueNumber(issue);
         releaseDate = releaseDateField.getText();
-        System.out.println(releaseDate);
         item.setDate(releaseDate);
         description = descriptionField.getText();
-        System.out.println(description);
         item.setDescription(description);
         priceString = priceField.getText();
-        System.out.println(priceString);
         Float price = Float.parseFloat(priceString);
         item.setPrice(price);
-        rarityString = rarityField.toString();
-        System.out.println(rarityString);
+        rarityString = rarityField.getText();
         Integer rarity = Integer.parseInt(rarityString);
         item.setRarityScale(rarity);
 
+        DAO dao = new DAO();
+        DAO.addItem(item);
 
+        Stage stage = (Stage) addButton.getScene().getWindow();
+        stage.close();
     }
 
     /*  CancelButtonEntered()
