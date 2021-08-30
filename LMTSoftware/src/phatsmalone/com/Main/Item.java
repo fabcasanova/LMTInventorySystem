@@ -41,7 +41,7 @@ public class Item {
      *  Retrieves the itemname
      *
      */
-    public String getName() { return name.get(); }
+    public String getName() { return name.toString(); }
 
     /*  nameProperty()
      *
@@ -92,7 +92,7 @@ public class Item {
     public String getDate() {
 
 
-        return date.get();
+        return date.toString();
     }
 
     /*  dateProperty()

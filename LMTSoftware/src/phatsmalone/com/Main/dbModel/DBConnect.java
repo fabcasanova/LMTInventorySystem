@@ -1,5 +1,7 @@
 package phatsmalone.com.Main.dbModel;
 
+import phatsmalone.com.Main.Item;
+
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
@@ -79,18 +81,24 @@ public class DBConnect {
 
         return crs;
     }
-
+    //FIXME Match data types to their respective columns atrribute types
     /*  executeDBUpdate()
      *
      *  Executes updates into the database.
      *
      */
-    public static void executeDBUpdate(String sqlString) throws SQLException{
+    public static void executeDBInsert(String insertString, Item item) throws SQLException{
         PreparedStatement statement = null;
         try {
             connect();
-            statement = connect.prepareStatement(sqlString);
-            statement.executeQuery();
+            statement = connect.prepareStatement(insertString);
+            statement.setString(1,item.getName());
+            statement.setString(2, item.getIssueNumber());
+            statement.setString(3, item.getDate());
+            statement.setString(4, item.getDescription());
+            statement.setFloat(5, item.getPrice());
+            statement.setInt(6, item.getRarityScale());
+            statement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
