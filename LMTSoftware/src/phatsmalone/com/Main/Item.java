@@ -2,6 +2,9 @@ package phatsmalone.com.Main;
 
 import javafx.beans.property.*;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /*  Item
  *
  *  This class is for retrieving and modifying item data.
@@ -41,7 +44,7 @@ public class Item {
      *  Retrieves the itemname
      *
      */
-    public String getName() { return name.toString(); }
+    public String getName() { return name.get(); }
 
     /*  nameProperty()
      *
@@ -92,7 +95,7 @@ public class Item {
     public String getDate() {
 
 
-        return date.toString();
+        return date.get();
     }
 
     /*  dateProperty()
@@ -145,7 +148,8 @@ public class Item {
      *
      */
     public Float getPrice() {
-        return price.get();
+        BigDecimal bd = BigDecimal.valueOf(price.get()).setScale(2, RoundingMode.HALF_UP);
+        return bd.floatValue();
     }
 
     /*  priceProperty()

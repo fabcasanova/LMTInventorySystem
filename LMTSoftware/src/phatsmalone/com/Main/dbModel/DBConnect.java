@@ -81,7 +81,7 @@ public class DBConnect {
 
         return crs;
     }
-    //FIXME Match data types to their respective columns atrribute types
+    //FIXME SQLITE IS TYPLESS, SET EVERYTHING TO STRINGS THEN DO CONVERSIONS
     /*  executeDBUpdate()
      *
      *  Executes updates into the database.
@@ -96,7 +96,7 @@ public class DBConnect {
             statement.setString(2, item.getIssueNumber());
             statement.setString(3, item.getDate());
             statement.setString(4, item.getDescription());
-            statement.setFloat(5, item.getPrice());
+            statement.setString(5, item.getPrice().toString());
             statement.setInt(6, item.getRarityScale());
             statement.executeUpdate();
         } catch (SQLException throwables) {
