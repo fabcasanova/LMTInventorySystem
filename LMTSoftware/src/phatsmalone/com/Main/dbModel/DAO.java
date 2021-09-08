@@ -89,6 +89,16 @@ public class DAO {
             throw e;
         }
     }
+    //FIXME START SEARCH SEGMENT
+    /*  searchItem()
+     *
+     *  This method executes the search function and returns the keywords row
+     *
+     */
+    public static void searchItem(String keyword){}
+
+
+
     //fix search
     /*  searchKeyword
      *

@@ -74,17 +74,14 @@ public class ProjectController {
     *  if they exist.
     *
     */
-    //grab data from textarea
     //grab data from table column
     //populate table with data to test the search feature
     //put the prepare statement in the DAO
     @FXML
-    private void searchButton(ActionEvent event) throws IOException, SQLException {
-    //String keyword = searchBar.getText();
-    //String table = "";
-    //DAO dao = new DAO();
-    //dao.searchKeyWord(keyword, table);
-    //populate observable list with entries from user keyword if any
+    private void searchButton(ActionEvent event) throws IOException {
+        String keyword = searchBar.getText();
+        DAO dao = new DAO();
+        DAO.searchItem(keyword);
     }
 
     /*
