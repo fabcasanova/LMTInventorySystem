@@ -68,6 +68,7 @@ public class ProjectController {
     @FXML
     private void loadInitItems(){}
 
+    //FIXME fix search result
     /*  searchButton()
     *
     *  The user inputs a keyword in the search bar and will return values
@@ -78,10 +79,9 @@ public class ProjectController {
     //populate table with data to test the search feature
     //put the prepare statement in the DAO
     @FXML
-    private void searchButton(ActionEvent event) throws IOException {
+    private void searchButton(ActionEvent event) throws IOException, ClassNotFoundException {
         String keyword = searchBar.getText();
-        DAO dao = new DAO();
-        DAO.searchItem(keyword);
+        populateGrid( DAO.searchItem(keyword));
     }
 
     /*

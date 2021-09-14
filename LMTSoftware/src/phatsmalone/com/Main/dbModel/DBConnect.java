@@ -108,4 +108,53 @@ public class DBConnect {
             dbDisconnect();
         }
     }
+
+    /*  virtualSearchTable()
+     *
+     *  This function creates a virtual table using sqlite fts5 for a full text search.
+     *
+     */
+    public static void virtualSearchTable() throws SQLException{
+        String virtualStatement = "CREATE VIRTUAL TABLE search\n" +
+                "USING FTS5(name, id, date, description, price, rarityscale)";
+
+        PreparedStatement statement = null;
+
+        try{
+            connect();
+            statement = connect.prepareStatement(virtualStatement);
+            statement.executeQuery();
+            duplicateIntoVirtualTable();
+        } catch (Exception e){
+            e.printStackTrace();
+        }   finally {
+            if (statement != null) {
+                dbDisconnect();
+            }
+        }
+    }
+
+
+    /*  duplicateIntoVirtualTable()
+     *
+     *  This function inserts the item tables into the virtual tables.
+     *
+     */
+    public static void duplicateIntoVirtualTable() throws SQLException {
+        String innerStatement = "INSERT INTO search\n" +
+                "SELECT*\n" +
+                "FROM ItemInventory";
+        PreparedStatement statement = null;
+        try{
+            connect();
+            statement = connect.prepareStatement(innerStatement);
+            statement.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (statement != null) {
+                dbDisconnect();
+            }
+        }
+    }
 }

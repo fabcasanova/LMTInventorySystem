@@ -89,13 +89,25 @@ public class DAO {
             throw e;
         }
     }
-    //FIXME START SEARCH SEGMENT
+    //FIXME Table search already exists error
     /*  searchItem()
      *
      *  This method executes the search function and returns the keywords row
      *
      */
-    public static void searchItem(String keyword){}
+    public static ObservableList<Item> searchItem(String keyword) {
+        String  statement = "SELECT * FROM search WHERE search MATCH '" + keyword + "'";
+        try {
+            //DBConnect.virtualSearchTable();
+            //DBConnect.duplicateIntoVirtualTable();
+            ResultSet itemResult = DBConnect.executeDBQuery(statement);
+            return getItemList(itemResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
 
 
