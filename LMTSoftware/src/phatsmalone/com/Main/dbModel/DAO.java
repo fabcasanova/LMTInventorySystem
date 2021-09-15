@@ -89,7 +89,7 @@ public class DAO {
             throw e;
         }
     }
-    //FIXME Table search already exists error
+    //FIXME fix sql if exists statement otherwise it works
     /*  searchItem()
      *
      *  This method executes the search function and returns the keywords row
@@ -98,8 +98,8 @@ public class DAO {
     public static ObservableList<Item> searchItem(String keyword) {
         String  statement = "SELECT * FROM search WHERE search MATCH '" + keyword + "'";
         try {
-            //DBConnect.virtualSearchTable();
-            //DBConnect.duplicateIntoVirtualTable();
+            DBConnect.virtualSearchTable();
+
             ResultSet itemResult = DBConnect.executeDBQuery(statement);
             return getItemList(itemResult);
         } catch (Exception e) {

@@ -108,22 +108,22 @@ public class DBConnect {
             dbDisconnect();
         }
     }
-
+    //FIXME THIS IS CREATING DUBLICATES NOW
     /*  virtualSearchTable()
      *
      *  This function creates a virtual table using sqlite fts5 for a full text search.
      *
      */
     public static void virtualSearchTable() throws SQLException{
-        String virtualStatement = "CREATE VIRTUAL TABLE search\n" +
-                "USING FTS5(name, id, date, description, price, rarityscale)";
+        String virtualStatement = "CREATE VIRTUAL TABLE IF NOT EXISTS search\n" +
+                "USING FTS5(Name, IssueNumber, ReleaseDate, Description, Price, RarityScale)";
 
         PreparedStatement statement = null;
 
         try{
             connect();
             statement = connect.prepareStatement(virtualStatement);
-            statement.executeQuery();
+            statement.executeUpdate();
             duplicateIntoVirtualTable();
         } catch (Exception e){
             e.printStackTrace();
@@ -141,14 +141,14 @@ public class DBConnect {
      *
      */
     public static void duplicateIntoVirtualTable() throws SQLException {
-        String innerStatement = "INSERT INTO search\n" +
+        String innerStatement = "INSERT OR IGNORE INTO search\n" +
                 "SELECT*\n" +
                 "FROM ItemInventory";
         PreparedStatement statement = null;
         try{
             connect();
             statement = connect.prepareStatement(innerStatement);
-            statement.executeQuery();
+            statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
