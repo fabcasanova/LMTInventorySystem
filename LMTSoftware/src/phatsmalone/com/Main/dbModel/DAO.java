@@ -89,7 +89,7 @@ public class DAO {
             throw e;
         }
     }
-    //FIXME fix sql if exists statement otherwise it works
+    //FIXME Test for duplicates.
     /*  searchItem()
      *
      *  This method executes the search function and returns the keywords row
@@ -108,39 +108,12 @@ public class DAO {
 
         return null;
     }
-
-
-
-    //fix search
-    /*  searchKeyword
+    /*  addItem()
      *
-     *  This method executes the search function and returns the keywords row
+     *  This method adds an item to the database. Sends sql statement to DBConnect.
      *
      */
-     /* public void searchKeyWord(String keyword, String table) throws SQLException {
-        PreparedStatement statement;
-        DBConnect con = new DBConnect();
-        statement = con.connect.prepareStatement("SELECT * FROM " + table + " WHERE " + table + " MATCH = " + keyword);
-        ResultSet set = statement.executeQuery();
-        String search;
-
-        Item item = null;
-
-        while (set.next()) {
-
-            item = new Item();
-            item.setName(set.getString("Name"));
-            item.setIssueNumber(set.getString("IssueNumber"));
-            item.setDate(set.getDate("Date"));
-            item.setDescription(set.getString("Description"));
-            item.setPrice(set.getFloat("Price"));
-            item.setRarityScale(set.getInt("RarityScale"));
-        }
-
-        System.out.println("search");
-    }
-    */
-    public static void addItem(Item item){
+    public static void addItem(Item item) {
         String statement =  "INSERT INTO ItemInventory(Name, IssueNumber, ReleaseDate, Description, Price, RarityScale)" +
                             " VALUES(?, ?, ?, ?, ?, ?);";
         try {
@@ -149,4 +122,15 @@ public class DAO {
             e.printStackTrace();
         }
     }
+
+    /*  deleteItem()
+     *
+     *
+     *
+     */
+    public static void deleteItem(Item item) {
+
+    }
+
+
 }

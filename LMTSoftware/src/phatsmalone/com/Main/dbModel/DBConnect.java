@@ -108,7 +108,7 @@ public class DBConnect {
             dbDisconnect();
         }
     }
-    //FIXME THIS IS CREATING DUBLICATES NOW
+    //FIXME THIS IS CREATING DUBLICATES
     /*  virtualSearchTable()
      *
      *  This function creates a virtual table using sqlite fts5 for a full text search.
