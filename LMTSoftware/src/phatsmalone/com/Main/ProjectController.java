@@ -51,14 +51,14 @@ public class ProjectController {
      */
     @FXML
     private void initialize() throws SQLException, ClassNotFoundException {
-    //in item class, write methods that return the property of the values as objects
-    name.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-    issueNumber.setCellValueFactory(cellData -> cellData.getValue().issueNumProperty());
-    date.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
-    description.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
-    price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
-    rarity.setCellValueFactory((cellData -> cellData.getValue().rarityScaleProperty().asObject()));
-    populateGrid(DAO.searchAllItems());
+        //in item class, write methods that return the property of the values as objects
+        name.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        issueNumber.setCellValueFactory(cellData -> cellData.getValue().issueNumProperty());
+        date.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        description.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
+        price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+        rarity.setCellValueFactory((cellData -> cellData.getValue().rarityScaleProperty().asObject()));
+        populateGrid(DAO.searchAllItems());
     }
     /*
      *
@@ -152,9 +152,11 @@ public class ProjectController {
 
     }
 
-
+    //grab item by highlight of the observablelist table
     @FXML
     private void deleteButton(ActionEvent event) throws IOException {
-
+        Item sItem = itemTable.getSelectionModel().getSelectedItem();
+        System.out.println(sItem.getName());
+        //itemTable.getItems().removeAll(itemTable.getSelectionModel().getSelectedItem());
     }
 }

@@ -128,7 +128,7 @@ public class DAO {
      *
      *
      */
-    public static void deleteItem(Item item) {
+    public static void deleteItemRow(Item item) {
 
     }
 

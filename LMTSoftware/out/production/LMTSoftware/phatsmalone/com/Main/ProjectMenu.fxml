@@ -48,7 +48,7 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button minWidth="55.0" mnemonicParsing="false" text="Delete" />
+            <Button minWidth="55.0" mnemonicParsing="false" text="Delete" onAction="#deleteButton" />
          </children>
       </HBox>
       <Hyperlink text="Import CSV" />
