@@ -157,4 +157,21 @@ public class DBConnect {
             }
         }
     }
+
+    //FIXME NEEDS TO BE TESTED
+    /*  executeDelete()
+     *
+     *  This method executes the delete sql statement for the project menu.
+     *
+     */
+    public static void executeDelete(String statement) throws SQLException {
+        PreparedStatement preparedStatement = null;
+
+        try{
+            preparedStatement = connect.prepareStatement(statement);
+            preparedStatement.executeUpdate();
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

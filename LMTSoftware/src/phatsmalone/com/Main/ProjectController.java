@@ -21,6 +21,7 @@ public class ProjectController {
     String words;
     @FXML
     private TextField searchBar;
+
     //observable list for table entry
     @FXML
     private TableView<Item> itemTable;
@@ -60,15 +61,8 @@ public class ProjectController {
         rarity.setCellValueFactory((cellData -> cellData.getValue().rarityScaleProperty().asObject()));
         populateGrid(DAO.searchAllItems());
     }
-    /*
-     *
-     *
-     *
-     */
-    @FXML
-    private void loadInitItems(){}
 
-    //FIXME fix search result
+    //FIXME fix doubles
     /*  searchButton()
     *
     *  The user inputs a keyword in the search bar and will return values
@@ -84,9 +78,9 @@ public class ProjectController {
         populateGrid( DAO.searchItem(keyword));
     }
 
-    /*
+    /*  populateItemGrid()
      *
-     *
+     *  Populates grid with an item.
      *
      */
     @FXML
@@ -96,20 +90,16 @@ public class ProjectController {
         itemTable.setItems(list);
     }
 
-    /*
+    /*  populateGrid()
      *
-     *
+     *  Populates grid will the all the items in the db.
      *
      */
     @FXML
     private void populateGrid(ObservableList<Item> items) throws ClassNotFoundException{
         itemTable.setItems(items);
     }
-    /*
-     *
-     *
-     *
-     */
+
 
     /*
      *
@@ -132,6 +122,11 @@ public class ProjectController {
         }
     }
 
+    /*  addButton()
+     *
+     *  This triggers the add button fragment window.
+     *
+     */
     @FXML
     private void addButton(ActionEvent event) throws IOException {
         Parent frag = FXMLLoader.load(getClass().getResource("addFragment.fxml"));
@@ -146,17 +141,27 @@ public class ProjectController {
 
     }
 
-
+    /*  updateButton()
+     *
+     *  This button triggers an updated grid of data in project menu.
+     *
+     */
     @FXML
     private void updateButton(ActionEvent event) {
 
     }
 
-    //grab item by highlight of the observablelist table
+    /*  deleteButton()
+     *
+     *  This button deletes the cursor selected row on project menu.
+     *
+     */
+    //FIXME grab item by highlight of the observablelist table
     @FXML
     private void deleteButton(ActionEvent event) throws IOException {
         Item sItem = itemTable.getSelectionModel().getSelectedItem();
         System.out.println(sItem.getName());
-        //itemTable.getItems().removeAll(itemTable.getSelectionModel().getSelectedItem());
+        System.out.println(sItem.getIssueNumber());
+        DAO.deleteItemRow(sItem);
     }
 }

@@ -73,9 +73,10 @@ public class DAO {
         return itemList;
     }
 
-    /*
+    /* searchAllItems()
      *
-     *
+     *  This method generates the sql string to get the
+     *  data for the starting menu in the project page.
      *
      */
     public static ObservableList<Item> searchAllItems() throws SQLException, ClassNotFoundException {
@@ -122,15 +123,20 @@ public class DAO {
             e.printStackTrace();
         }
     }
-
-    /*  deleteItem()
+    //FIXME NEEDS TO BE TESTED
+    /*  deleteItemRow()
      *
-     *
-     *
+     *  This method gets called from the project menu delete button. Acts as the Data
+     *  Object that interacts with the db connection.  Generates the delete sql statement to
+     *  delete the selected item in the db.
      */
     public static void deleteItemRow(Item item) {
-
+        String statement = "DELETE FROM ItemInventory WHERE Name = " + item.getName() +
+                " AND IssueNumber = " + item.getIssueNumber();
+        try {
+            DBConnect.executeDelete(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-
-
 }
