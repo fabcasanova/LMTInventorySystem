@@ -44,7 +44,7 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>
-            <Button minWidth="55.0" mnemonicParsing="false" text="Update">
+            <Button minWidth="55.0" mnemonicParsing="false" text="Update" onAction="#updateButton">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin></Button>

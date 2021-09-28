@@ -140,15 +140,16 @@ public class ProjectController {
         addFragment.showAndWait();
 
     }
-
+    //FIXME test update
     /*  updateButton()
      *
      *  This button triggers an updated grid of data in project menu.
      *
      */
     @FXML
-    private void updateButton(ActionEvent event) {
-
+    private void updateButton(ActionEvent event) throws SQLException, ClassNotFoundException {
+        DAO.updateItem();
+        populateGrid(DAO.searchAllItems());
     }
 
     /*  deleteButton()

@@ -139,4 +139,20 @@ public class DAO {
             e.printStackTrace();
         }
     }
+
+    /*
+     *
+     *
+     *
+     */
+    public static void updateItem() {
+        String statement = "SELECT * FROM ItemInventory";
+        try {
+            DBConnect.executeDBQuery(statement);
+        } catch (SQLException e)  {
+            e.printStackTrace();
+        }
+    }
+
+
 }
