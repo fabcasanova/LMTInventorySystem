@@ -140,7 +140,7 @@ public class ProjectController {
         addFragment.showAndWait();
 
     }
-    //FIXME test update
+
     /*  updateButton()
      *
      *  This button triggers an updated grid of data in project menu.
@@ -157,12 +157,11 @@ public class ProjectController {
      *  This button deletes the cursor selected row on project menu.
      *
      */
-    //FIXME grab item by highlight of the observablelist table
     @FXML
     private void deleteButton(ActionEvent event) throws IOException {
         Item sItem = itemTable.getSelectionModel().getSelectedItem();
-        System.out.println(sItem.getName());
-        System.out.println(sItem.getIssueNumber());
+        //System.out.println(sItem.getName());
+        //System.out.println(sItem.getIssueNumber());
         DAO.deleteItemRow(sItem);
     }
 }

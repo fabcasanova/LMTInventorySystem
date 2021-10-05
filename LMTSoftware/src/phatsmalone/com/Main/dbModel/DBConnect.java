@@ -81,7 +81,7 @@ public class DBConnect {
 
         return crs;
     }
-    //FIXME SQLITE IS TYPLESS, SET EVERYTHING TO STRINGS THEN DO CONVERSIONS
+
     /*  executeDBUpdate()
      *
      *  Executes updates into the database.
@@ -158,7 +158,7 @@ public class DBConnect {
         }
     }
 
-    //FIXME NEEDS TO BE TESTED
+
     /*  executeDelete()
      *
      *  This method executes the delete sql statement for the project menu.
@@ -168,10 +168,12 @@ public class DBConnect {
         PreparedStatement preparedStatement = null;
 
         try{
+            connect();
             preparedStatement = connect.prepareStatement(statement);
             preparedStatement.executeUpdate();
         } catch(SQLException e){
             e.printStackTrace();
+            //System.out.println("Pointed here");
         }
     }
 }

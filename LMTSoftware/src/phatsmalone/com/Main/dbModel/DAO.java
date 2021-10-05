@@ -123,7 +123,7 @@ public class DAO {
             e.printStackTrace();
         }
     }
-    //FIXME NEEDS TO BE TESTED
+
     /*  deleteItemRow()
      *
      *  This method gets called from the project menu delete button. Acts as the Data
@@ -131,8 +131,8 @@ public class DAO {
      *  delete the selected item in the db.
      */
     public static void deleteItemRow(Item item) {
-        String statement = "DELETE FROM ItemInventory WHERE Name = " + item.getName() +
-                " AND IssueNumber = " + item.getIssueNumber();
+        String statement = "DELETE FROM ItemInventory WHERE Name = '" + item.getName() +
+                "' AND IssueNumber = " + item.getIssueNumber();
         try {
             DBConnect.executeDelete(statement);
         } catch (SQLException e) {
@@ -140,9 +140,9 @@ public class DAO {
         }
     }
 
-    /*
+    /*  updateItem()
      *
-     *
+     *  Executes a select all from items. Passes string statement into the db connection.
      *
      */
     public static void updateItem() {
